@@ -1,5 +1,4 @@
-import React from 'react'
-import HomeView from './home/homeVIew';
+import HomeView from './home/homeView';
 import DetailView from './detail/detailView';
 import MineView from './other/mine';
 import HomeDetailView from './home/homeDetailVIew';
@@ -13,8 +12,7 @@ function App() {
             <Routes>
                 {/* 默认进入页面 */}
                 <Route path="/" element={<HomeView />} /> 
-                <Route path="/main" >
-                    <Route path="home" element={<HomeView />} />
+                <Route path="/home" element={<HomeView />}  >
                     <Route path="detail" element={<HomeDetailView />} />
                 </Route>
 

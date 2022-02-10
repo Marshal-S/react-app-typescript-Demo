@@ -1,11 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {toggleFull} from 'be-full';
 import LeftView from './leftView';
 import RightView from './rightVIew';
+import { useNavigate } from 'react-router-dom';
+
+export interface listType {
+    id: number
+    title: string
+    text: string
+    number: number
+    unit: string
+    status: number
+}
 
 function HomeView() {
-    const [isLoading, setIsLoading] = useState(true);
-    const [list, setList] = useState([{
+    const [isLoading, setIsLoading] = useState<boolean>(true);
+    const [list, setList] = useState<Array<listType>>([{
         id: 0,
         title: '斗罗大陆',
         text: '累计观看:',
@@ -84,6 +94,8 @@ function HomeView() {
         status: 1,
     }]);
 
+    const navigate = useNavigate()
+
     //这个相当于 componentDidMount
     useEffect(() => {
         setTimeout(() => {
@@ -93,7 +105,7 @@ function HomeView() {
 
     //进入详情页
     const enterDetail = () => {
-        
+        navigate('/home/detail')
     }
 
     return (<div>{
@@ -101,8 +113,8 @@ function HomeView() {
             <div 
                 style={{ 
                     position: 'absolute', 
-                    width: '100vw', 
-                    height: '100vh', 
+                    width: '100vw',
+                    height: '100vh',
                     display: `${isLoading ? 'flex' : 'none'}`, 
                     flexDirection: 'row', 
                     alignItems: 'center', 

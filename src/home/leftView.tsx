@@ -1,7 +1,8 @@
 import React from 'react'
+import { listType } from './homeView'
 
 interface LeftProps {
-    list: Array<any> //这里偷懒直接any,实际可传递list实际类型
+    list: Array<listType>
 }
 
 export default class LeftView extends React.Component<LeftProps> {

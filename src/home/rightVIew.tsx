@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import {toggleFull} from 'be-full';
 import { useNavigate } from 'react-router-dom';
+import { listType } from './homeView';
 
 interface RightProps {
-    list: Array<any> //这里偷懒直接any,实际可传递list实际类型
-    updateListCallback?: (list: Array<any>) => any
+    list: Array<listType>
+    updateListCallback?: (list: Array<listType>) => any
     enterDetailCallback?: Function //可以理解任意类型的函数
 }
 
 
 const RightView = (props: RightProps) => {
-    const [list, setList] = useState<Array<any>>(props.list)
+    const [list, setList] = useState<Array<listType>>(props.list)
     const [isShowSimulate, setIsShowSimulate] = useState<boolean>(true)
 
     const navigate = useNavigate()
 
     useEffect(() => {
         console.log('组件加载完毕了，在这里可以做组件自身内容')
-    })
+    }, [])
 
-    //当 props发生改变是，更新内容
+    //当 props发生改变时，更新内容
     useEffect(() => {
         //更新list
         setList(props.list)
