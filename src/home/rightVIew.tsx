@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import {toggleFull} from 'be-full';
 import { useNavigate } from 'react-router-dom';
-import { listType } from './homeView';
+import { listType } from './homeViews';
 
 interface RightProps {
     list: Array<listType>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { listType } from './homeView'
+import { listType } from './homeViews'
 
 interface LeftProps {
     list: Array<listType>

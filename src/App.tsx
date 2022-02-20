@@ -1,4 +1,4 @@
-import HomeView from './home/homeView';
+import HomeView from './home/homeViews';
 import DetailView from './detail/detailView';
 import MineView from './other/mine';
 import HomeDetailView from './home/homeDetailVIew';
