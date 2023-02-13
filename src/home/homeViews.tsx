@@ -3,6 +3,7 @@ import {toggleFull} from 'be-full';
 import LeftView from './leftView';
 import RightView from './rightVIew';
 import { useNavigate } from 'react-router-dom';
+import { DialogView } from '../dialog';
 
 export interface listType {
     id: number

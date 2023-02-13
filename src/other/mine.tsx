@@ -1,4 +1,5 @@
 import { Link, useNavigate } from "react-router-dom"
+import { showDialog } from "../dialog/dialog"
 
 const MineView = () => {
     const navigate = useNavigate()
@@ -30,6 +31,15 @@ const MineView = () => {
                     marginTop: 20
                 }}
                 >通过navigate，我也可以跳转到home页</div>
+            <div 
+                onClick={() => {
+                    showDialog()
+                }}
+                style={{
+                    fontSize: 18, 
+                    marginTop: 20
+                }}
+                >弹出弹窗以跳转到首页</div>
         </div>
     )
 }
